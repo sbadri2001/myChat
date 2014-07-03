@@ -1,0 +1,51 @@
+
+.mainContainer{
+	border: 1px solid;	
+	text-align: center;
+	margin: 10px;
+	border-radius: 3px;
+	box-shadow: 10px 10px 5px #888888;
+	background-color: #eee;
+}
+.chatContainer{
+	border: 1px solid #ccc; 	
+	margin: 10px;
+	border-radius: 3px;
+	background-color: #eee;
+}
+.messages{
+	border: 1px solid #ccc; 	
+	text-align: center;
+	margin: 10px;
+	border-radius: 3px;
+	background-color: #eee;
+	height: 350px;
+}
+.chatarea{
+	border: 1px solid #ccc; 	
+	text-align: center;
+	margin: 10px;
+	border-radius: 3px;
+	background-color: #eee;
+	height: 85%;
+}
+.status{
+	text-align: left;
+	margin: 10px;
+}
+.typearea{
+	bottom: 5px;
+	height: 60px;
+}
+.newMessage{
+	width: 90%;
+	border: 1px solid #ccc; 	
+	margin: 0 0 10px 10px;
+	border-radius: 3px;
+	background-color: #eee;
+	height: 100%;
+	float:left;
+}
+.msg{
+	width: 500px;
+}

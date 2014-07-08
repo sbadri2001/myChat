@@ -42,7 +42,7 @@ exports.index = function(req, res) {
 /**
  * Login to Chat
  */
-exports.login = function(req, res) {
+exports.createChat = function(req, res) {
 	var myChatUser = new MyChatUser(req.body);
 
 	myChatUser.save(function(err) {
@@ -55,3 +55,16 @@ exports.login = function(req, res) {
 		}
 	});
 };
+
+
+exports.getUserList = function(req, res) {
+
+	MyChatUser.find({}, function (err, users) {
+         var userMap = {};
+         users.forEach(function(user) {
+              userMap[user._id] = user;
+         });
+         res.send(userMap);  
+    });
+};
+

@@ -60,11 +60,10 @@ exports.createChat = function(req, res) {
 exports.getUserList = function(req, res) {
 
 	MyChatUser.find({}, function (err, users) {
-         var userMap = {};
-         users.forEach(function(user) {
-              userMap[user._id] = user;
-         });
-         res.send(userMap);  
+         res.send(users);  
     });
 };
 
+exports.submitChat = function(req, res) {
+	
+};

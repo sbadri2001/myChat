@@ -1,21 +1,21 @@
 <div class="mainContainer" data-ng-controller="ChatController">
-	<h3>Welcome</h3>
+	<h3>Welcome, {{user}}</h3>
 	<div class="chatContainer">
 		<div class="messages">
 			<div class="chatarea">
-
+				{{chatArea}}
 			</div>
 			<div class="status">
-				<i>USer1 is typing...</i>
+				{{user}} is typing...
 			</div>
 		</div>
 		<div class="typearea">
-			<div class="newMessage">
-				<textarea id="msg"></textarea>
-			</div>
-			<div class="submit">
-				<button><span>Send</span></button>
-			</div>
+			<form class="newMessage" data-ng-submit="submitChat()">
+				<textarea id="msg" data-ng-model="chatText"></textarea>
+				<div class="submit">
+					<input type="submit" value="Send"></input>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>

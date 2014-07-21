@@ -13,4 +13,6 @@ module.exports = function(app) {
 
 	app.route('/mychat/userList').get(mychat.getUserList);
 
+	app.route('/mychat/submitChat:chatMsg').post(mychat.submitChat);
+
 };

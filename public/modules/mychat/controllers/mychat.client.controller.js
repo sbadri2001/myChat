@@ -36,21 +36,30 @@ angular.module('mychat')
 
 		// Calculate number of logged in users
 		$scope.updateUserCount = function () {
-			this.userCount = MyChatService.userList.query(function(response){
-				return response.length;
-			},
-			function(error){
-				return 0;
+			MyChatService.userCount.query({}, angular.noop, function(response){
+				console.log(response);
+				$scope.userCount = response.status;
 			});
 		};
 
+		//Submit Chat Message
 		$scope.submitChat = function () {
 			mySocket.emit('message', { chat : $scope.chatText });
 			$scope.chatText = '';
 		};
 
+		// Handling Socket Events
 	    mySocket.on('broadcast', function(msg){
-	        $scope.chatArea = $scope.chatArea  + '\n' + msg.payload.chat;
+	        $scope.chatArea = $scope.chatArea  + '-----' + msg.payload.chat;
+	    });
+	    mySocket.on('user connected', function(){
+	        $scope.chatArea = $scope.chatArea  + '----- User Joined';
+	    });
+	    mySocket.on('login', function(){
+	        $scope.chatArea = 'Welcome';
+	    });
+	    mySocket.on('user disconnect', function(){
+	        $scope.chatArea = $scope.chatArea  + '----- User left';
 	    });
 	}
 ]);

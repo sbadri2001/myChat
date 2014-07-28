@@ -12,8 +12,8 @@ angular.module('mychat').factory('MyChatService', ['$resource',
 						method: 'PUT'
 					}
 				}),
-			userList:
-				$resource('/mychat/userList', {}, { query: {method: 'GET', isArray: true}}),
+			userCount:
+				$resource('/mychat/userCount'),
 			submitChat:
 				$resource('/mychat/submitChat:chatMsg', {}, { submit: {method: 'POST'}})
 		};

@@ -57,10 +57,10 @@ exports.createChat = function(req, res) {
 };
 
 
-exports.getUserList = function(req, res) {
+exports.getUserCount = function(req, res) {
 
 	MyChatUser.find({}, function (err, users) {
-         res.send(users);  
+         res.send(users.length);  
     });
 };
 

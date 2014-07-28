@@ -11,7 +11,7 @@ module.exports = function(app) {
 	app.route('/mychat/login')
 		.put(mychat.createChat);
 
-	app.route('/mychat/userList').get(mychat.getUserList);
+	app.route('/mychat/userCount').get(mychat.getUserCount);
 
 	app.route('/mychat/submitChat:chatMsg').post(mychat.submitChat);
 

@@ -43,10 +43,17 @@
 </head>
 
 <body class="ng-cloak">
-	<header data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
 	<section class="content">
 		<section class="container">
-			{% block content %}{% endblock %}
+			<div class="row">
+			  <div class="col-xs-1 col-md-1">Navigator</div>
+			  <div class="col-xs-10 col-md-10">
+			  	<header data-ng-include="'/modules/core/views/header.client.view.html'"></header>
+			  	{% block content %}{% endblock %}
+			  </div>
+			  <div class="col-xs-1 col-md-1">Inspector</div>
+			</div>
+			
 		</section>
 	</section>
 

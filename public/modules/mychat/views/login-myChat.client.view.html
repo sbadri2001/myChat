@@ -2,9 +2,9 @@
 	<h3>Welcome to myChat</h3>
 	<hr>
 	<form name="login" data-ng-submit="enterChat();">
-		Enter a name:<br/>
-		<input type="text" data-ng-model="userName" placeholder="UserName"></input>
-		<input type="submit" value="Chat"></input>
+		<h4>Enter a Chat Name:</h4>
+		<input type="text" class="form-control" data-ng-model="userName" placeholder="Name"></input>
+		<input type="submit" value="Go" class="btn btn-default"></input>
 	</form>
 	<hr>
 	Online Users: {{userCount}}
